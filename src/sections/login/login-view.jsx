@@ -18,6 +18,7 @@ import { useAuth } from 'src/provider/AuthProvider';
 
 import Logo from 'src/components/logo';
 import Iconify from 'src/components/iconify'; // Importez le hook useAuth
+import { account } from 'src/_mock/account';
 
 // ----------------------------------------------------------------------
 
@@ -40,7 +41,7 @@ export default function LoginView() {
     // Si les informations d'identification sont valides, rediriger vers la page d'accueil et mettre à jour l'état de connexion.
     // Par exemple, vous pouvez utiliser une API pour vérifier les informations d'identification.
 
-    if (email === 'admin@admin.com' && password === 'ADMIN') {
+    if (email === account.email && password === account.passwd) {
       localStorage.setItem('isLoggedIn', true);
       // Si les informations d'identification sont valides, rediriger vers la page d'accueil
       router.push('/');
